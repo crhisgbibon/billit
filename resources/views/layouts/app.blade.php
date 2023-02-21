@@ -13,16 +13,13 @@
       @endif
     </title>
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-
     <!-- Add ins -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/vh.js'])
   </head>
-    <body class="font-sans antialiased">
+    <body class="antialiased">
       <div class="min-h-screen">
         
         @include('layouts.navigation')
