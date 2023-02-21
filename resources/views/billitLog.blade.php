@@ -14,18 +14,11 @@
   </style>
 
   <x-slot name="appTitle">
-    {{ __('billit : Log') }}
+    {{ __('billit : log') }}
   </x-slot>
 
   <x-slot name="appName">
-    {{ __('billit : Log') }}
-  </x-slot>
-
-  <x-slot name="header" class="flex-row items-center">
-    <div class="flex w-full max-w-6xl flex-row justify-center mx-auto" style="height:calc(var(--vh) * 7.5)">
-      <a id="LogButton" href="{{ url('/log') }}" class="h-full flex justify-center items-center mx-2 active:scale-95"><img class="w-3/4 h-3/4" src="{{ asset('storage/Assets/calendarLight.svg') }}"></a>
-      <a id="SummaryButton" href="{{ url('/stats') }}" class="h-full flex justify-center items-center mx-2 active:scale-95"><img class="w-3/4 h-3/4" src="{{ asset('storage/Assets/chartLight.svg') }}"></a>
-    </div>
+    {{ __('billit : log') }}
   </x-slot>
 
   <div class="flex flex-col justify-center items-center max-w-xl mx-auto">
@@ -51,7 +44,7 @@
         echo date("Y-m-d");
       }?>'>
       <x-secondary-button type="submit" class="flex justify-center items-center active:scale-95" style="min-height:calc(var(--vh) * 7.5);min-width:10%" id="getdatesbutton">
-        <img src="{{ asset('storage/Assets/searchLight.svg') }}">
+        <img src="{{ asset('storage/Assets/search.svg') }}">
       </x-secondary-button>
     </div>
 
@@ -59,7 +52,7 @@
       <x-session-button :session="$isSession"/>
       <input class='h-full text-center bg-white' type="clock" id="clock" readonly disabled style="min-height:calc(var(--vh) * 7.5);min-width:70%">
       <x-secondary-button class='flex justify-center items-center active:scale-95 cursor-pointer' style="min-height:calc(var(--vh) * 7.5);min-width:10%" id="newitembutton">
-        <img src="{{ asset('storage/Assets/plusLight.svg') }}">
+        <img src="{{ asset('storage/Assets/plus.svg') }}">
       </x-secondary-button>
     </div>
   </div>

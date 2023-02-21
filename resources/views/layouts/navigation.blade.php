@@ -4,19 +4,17 @@
 
     <div class="flex flex-row items-center w-full bg-white border-b border-gray-100 justify-between sm:justify-center " style="min-height:calc(var(--vh) * 7.5)">
 
-      <!-- Navigation Links -->
-      <div class="hidden sm:flex min-w-40 w-1/3 ml-2 h-full justify-center items-center">
-        <x-nav-link :href="url('/')" class="h-full" :active="request()->routeIs('/')" style="min-height:calc(var(--vh) * 7.5)">
-          {{ __('Home') }}
-        </x-nav-link>
-      </div>
-
       <div class="ml-2 sm:m-0 flex justify-center items-center h-full w-1/3">
         @if (isset($appName))
           {{ $appName }}
         @else
           {{ config('app.name', 'crhisgbibon') }}
         @endif
+      </div>
+
+      <div class="flex w-full max-w-6xl flex-row justify-center mx-auto" style="height:calc(var(--vh) * 7.5)">
+        <a id="LogButton" href="{{ url('/log') }}" class="h-full flex justify-center items-center mx-4 active:scale-95"><img class="w-3/4 h-3/4" src="{{ asset('storage/Assets/calendar.svg') }}"></a>
+        <a id="SummaryButton" href="{{ url('/stats') }}" class="h-full flex justify-center items-center mx-4 active:scale-95"><img class="w-3/4 h-3/4" src="{{ asset('storage/Assets/chart.svg') }}"></a>
       </div>
 
       <!-- Settings Dropdown -->

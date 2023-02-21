@@ -43,7 +43,7 @@
         </div>
         <div class='flex justify-center items-center text-center' style="min-width:16%;max-width:16%">
           <button class="restartitembutton flex justify-center items-center rounded-lg h-full active:scale-95 border border-zinc-400" data-i={{$log->uniqueIndex}}>
-            <img data-restart="YES" src="{{ asset('storage/Assets/undoLight.svg') }}">
+            <img data-restart="YES" src="{{ asset('storage/Assets/undo.svg') }}">
           </button>
         </div>
 
@@ -108,7 +108,7 @@
           data-seconds='<?php echo date("s", $log->startTime); ?>'
 
           value='<?php echo date("H:i", $log->startTime); ?>'>
-          <div><img class="w-3/4 h-3/4" src="{{ asset('storage/Assets/chevronRightLight.svg') }}"></div>
+          <div><img class="w-3/4 h-3/4" src="{{ asset('storage/Assets/chevronRight.svg') }}"></div>
           <input type="time" class="mx-2 rounded flex justify-center items-center w-1/3 text-center"
           id=<?php echo $log->uniqueIndex . 'itemEnd' ?>
 

@@ -121,7 +121,7 @@ function Restart(index)
   $.ajax(
   {
     method: "POST",
-    url: "/billit/log/RestartItem",
+    url: "/log/RestartItem",
     headers:
     {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -148,7 +148,7 @@ function Delete(index)
   $.ajax(
   {
     method: "POST",
-    url: "/billit/log/DeleteItem",
+    url: "/log/DeleteItem",
     headers:
     {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -180,7 +180,7 @@ function UpdateItem(index)
   $.ajax(
   {
     method: "POST",
-    url: '/billit/log/UpdateItem',
+    url: '/log/UpdateItem',
     headers:
     {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -219,7 +219,7 @@ function UpdateSession(index)
   $.ajax(
   {
     method: "POST",
-    url: '/billit/log/UpdateSession',
+    url: '/log/UpdateSession',
     headers:
     {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
