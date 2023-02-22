@@ -51,15 +51,17 @@
     <div class="w-full flex flex-row justify-center items-center" style="min-height:calc(var(--vh) * 7.5)">
       <x-session-button :session="$isSession"/>
       <input class='h-full text-center bg-white' type="clock" id="clock" readonly disabled style="min-height:calc(var(--vh) * 7.5);min-width:70%">
+      @if($isSession === true)
       <x-secondary-button class='flex justify-center items-center active:scale-95 cursor-pointer' style="min-height:calc(var(--vh) * 7.5);min-width:10%" id="newitembutton">
         <img src="{{ asset('storage/Assets/plus.svg') }}">
       </x-secondary-button>
+      @endif
     </div>
   </div>
   
   <div id="logOutput" class="w-full max-w-6xl h-full mx-auto">
 
-    <x-billit-log-output :logs="$logs"/>
+    <x-billit-log-output :logs="$logs" :session="$isSession"/>
 
   </div>
 

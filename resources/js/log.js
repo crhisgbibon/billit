@@ -262,7 +262,7 @@ function ReAssign()
   getdatesbutton.onclick = function() { PostByDate('log/GetDates'); };
 
   let newitembutton = document.getElementById("newitembutton");
-  newitembutton.onclick = function() { PostByDate('log/NewItem'); };
+  if(newitembutton) newitembutton.onclick = function() { PostByDate('log/NewItem'); };
 
   let toggleitembyid = document.getElementsByClassName("toggleitembyid");
   for(let i = 0; i < toggleitembyid.length; i++)

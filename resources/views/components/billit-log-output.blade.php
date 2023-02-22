@@ -42,9 +42,11 @@
           ?>
         </div>
         <div class='flex justify-center items-center text-center' style="min-width:16%;max-width:16%">
+          @if($session === true)
           <button class="restartitembutton flex justify-center items-center rounded-lg h-full active:scale-95 border border-zinc-400" data-i={{$log->uniqueIndex}}>
             <img data-restart="YES" src="{{ asset('storage/Assets/undo.svg') }}">
           </button>
+          @endif
         </div>
 
       </div>
