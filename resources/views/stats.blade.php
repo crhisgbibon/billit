@@ -47,7 +47,7 @@
   
   <div id="logOutput" class="w-full max-w-6xl h-full mx-auto">
 
-    <x-billit-stats-output :summary="$summary" :weekday="$weekday"/>
+    <x-stats-output :summary="$summary" :weekday="$weekday"/>
 
   </div>
 

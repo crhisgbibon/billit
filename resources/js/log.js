@@ -6,8 +6,18 @@ let endDate = document.getElementById("endDate");
 let currentItem = document.getElementById("currentItem");
 let currentSession = document.getElementById("currentSession");
 
+let TIME_PANEL = document.getElementById('TIME_PANEL');
+
 let timeOut = undefined;
 let interval = undefined;
+
+TogglePanel(TIME_PANEL);
+
+function TogglePanel(panel)
+{
+  if(panel.style.display === '') panel.style.display = 'none';
+  else panel.style.display = '';
+}
 
 function ToggleItemById(ref)
 {
@@ -257,6 +267,9 @@ function ReAssign()
   endDate = document.getElementById("endDate");
   currentItem = document.getElementById("currentItem");
   currentSession = document.getElementById("currentSession");
+  TIME_PANEL = document.getElementById('TIME_PANEL');
+
+  clock.onclick = function() { TogglePanel(TIME_PANEL); };
 
   let getdatesbutton = document.getElementById("getdatesbutton");
   getdatesbutton.onclick = function() { PostByDate('log/GetDates'); };

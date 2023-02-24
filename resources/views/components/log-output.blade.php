@@ -4,7 +4,7 @@
 
     @if($log->isSession === 0)
 
-      <div data-i={{$log->uniqueIndex}} class='toggleitembyid mx-auto flex flex-row p-2 m-2 justify-center items-center rounded-lg box-border border border-zinc-400' style="min-height:calc(var(--vh) * 5)">
+      <div data-i={{$log->uniqueIndex}} class='toggleitembyid mx-auto flex flex-row p-2 m-2 justify-center items-center rounded-lg box-border border border-zinc-400' style="min-height:calc(var(--vh) * 5);max-width:95%">
 
         <div class='flex justify-center items-center truncate text-center' style="min-width:8%;max-width:8%">
           <?php echo ($log->tag !== "") ? $log->tag[0] : "-"; ?>
@@ -135,7 +135,7 @@
     @else
 
       <div data-i={{$log->uniqueIndex}}
-      class='togglesessionbuttonopen header mx-auto flex flex-row p-2 m-2 justify-center items-center rounded-lg box-border border border-zinc-400' data-i={{$log->uniqueIndex}} style="min-height:calc(var(--vh) * 5)">
+      class='togglesessionbuttonopen header mx-auto flex flex-row p-2 m-2 justify-center items-center rounded-lg box-border border border-zinc-400' data-i={{$log->uniqueIndex}} style="min-height:calc(var(--vh) * 5);max-width:95%">
 
         <div class='flex justify-center items-center' style="min-width:33%;max-width:33%">
           <?php

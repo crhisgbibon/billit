@@ -3,14 +3,14 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ControllerBillitLog;
-use App\Http\Controllers\ControllerBillitStat;
+use App\Http\Controllers\ControllerLog;
+use App\Http\Controllers\ControllerStats;
 
 Route::get('/', function(){
   return redirect('/log');
 })->middleware(['auth', 'verified'])->name('billit');
 
-Route::controller(ControllerBillitLog::class)->group(function () {
+Route::controller(ControllerLog::class)->group(function () {
   Route::get('/log', 'index')->middleware(['auth', 'verified'])->name('billitLog');
   Route::post('/log/GetDates', 'GetDates')->middleware(['auth', 'verified'])->name('GetDates');
   Route::post('/log/ToggleSession', 'ToggleSession')->middleware(['auth', 'verified'])->name('ToggleSession');
@@ -22,7 +22,7 @@ Route::controller(ControllerBillitLog::class)->group(function () {
   Route::post('/log/UpdateSession', 'UpdateSession')->middleware(['auth', 'verified'])->name('UpdateSession');
 });
 
-Route::controller(ControllerBillitStat::class)->group(function () {
+Route::controller(ControllerStats::class)->group(function () {
   Route::get('/stats', 'index')->middleware(['auth', 'verified'])->name('billitStats');
   Route::post('/stats/GetDates/Summary', 'GetSummary')->middleware(['auth', 'verified'])->name('GetDatesSummary');
   Route::post('/stats/GetDates/Weekday', 'GetWeekday')->middleware(['auth', 'verified'])->name('GetDatesWeekday');

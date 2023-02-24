@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\Models\ModelBillit;
 
-class ControllerBillitStat extends Controller
+class ControllerStats extends Controller
 {
   /**
    * Display a listing of the resource.
@@ -27,7 +27,7 @@ class ControllerBillitStat extends Controller
     $logs = $model->FormatLogs($rawLogs);
     $summary = $model->StatSummary($logs);
 
-    return view('billitStats', [
+    return view('stats', [
       'startDate' => $startTime,
       'endDate' => $endTime,
       'summary' => $summary,
@@ -63,7 +63,7 @@ class ControllerBillitStat extends Controller
     $logs = $model->FormatLogs($rawLogs);
     $summary = $model->StatSummary($logs);
 
-    return view('billitStats', [
+    return view('stats', [
       'startDate' => $startTime,
       'endDate' => $endTime,
       'summary' => $summary,
@@ -99,7 +99,7 @@ class ControllerBillitStat extends Controller
     $logs = $model->FormatLogs($rawLogs);
     $weekday = $model->StatWeekday($logs);
 
-    return view('billitStats', [
+    return view('stats', [
       'startDate' => $startTime,
       'endDate' => $endTime,
       'summary' => null,
@@ -135,71 +135,5 @@ class ControllerBillitStat extends Controller
     $stats = $model->ChartSession($logs);
 
     return $stats;
-  }
-
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
-  public function create()
-  {
-      //
-  }
-
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @return \Illuminate\Http\Response
-   */
-  public function store(Request $request)
-  {
-      //
-  }
-
-  /**
-   * Display the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
-  public function show($id)
-  {
-      //
-  }
-
-  /**
-   * Show the form for editing the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
-  public function edit($id)
-  {
-      //
-  }
-
-  /**
-   * Update the specified resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
-  public function update(Request $request, $id)
-  {
-      //
-  }
-
-  /**
-   * Remove the specified resource from storage.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
-  public function destroy($id)
-  {
-      //
   }
 }
