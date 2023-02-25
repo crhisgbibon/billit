@@ -38,7 +38,7 @@
   </div>
 
   <div class="flex flex-col justify-center items-center max-w-xl mx-auto" id='TIME_PANEL'>
-    <div class="w-full flex flex-row justify-evenly items-center" style="min-height:calc(var(--vh) * 7.5)">
+    <div class="w-full flex flex-col sm:flex-row justify-evenly items-center" style="min-height:calc(var(--vh) * 7.5)">
       <input name="startDate" class="text-center rounded" type="date" id="startDate" style="min-height:calc(var(--vh) * 5);max-width:35%"
       value='<?php
       if(isset($startDate))
