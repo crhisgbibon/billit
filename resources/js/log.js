@@ -117,12 +117,11 @@ function PostByDate(command)
     },
     success:function(result)
     {
-      console.log(result);
       Print(result);
     },
-    error:function(result)
+    error:function()
     {
-      console.log(result);
+
     }
   });
 }

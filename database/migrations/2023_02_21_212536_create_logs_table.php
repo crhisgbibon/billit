@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('logs', function (Blueprint $table) {
-            $table->id('uniqueIndex');
+            $table->id('uniqueIndex')->autoIncrement();
 
             $table->integer('user');
             $table->tinyInteger('isSession');
@@ -27,8 +27,6 @@ return new class extends Migration
             $table->tinyInteger('completed');
 
             $table->tinyInteger('hiddenRow');
-
-            $table->timestamps();
         });
     }
 
