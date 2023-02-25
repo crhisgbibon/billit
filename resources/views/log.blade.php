@@ -39,7 +39,7 @@
 
   <div class="flex flex-col justify-center items-center max-w-xl mx-auto" id='TIME_PANEL'>
     <div class="w-full flex flex-col sm:flex-row justify-evenly items-center" style="min-height:calc(var(--vh) * 7.5)">
-      <input name="startDate" class="text-center rounded" type="date" id="startDate" style="min-height:calc(var(--vh) * 5);max-width:35%"
+      <input name="startDate" class="text-center rounded my-2 sm:my-0" type="date" id="startDate" style="min-height:calc(var(--vh) * 5);max-width:35%"
       value='<?php
       if(isset($startDate))
       {
@@ -52,7 +52,7 @@
       <div class="flex justify-center items-center">
         <img src="{{ asset('storage/Assets/chevronRight.svg') }}">
       </div>
-      <input name="endDate" class="text-center rounded" type="date" id="endDate" style="min-height:calc(var(--vh) * 5);max-width:35%"
+      <input name="endDate" class="text-center rounded my-2 sm:my-0" type="date" id="endDate" style="min-height:calc(var(--vh) * 5);max-width:35%"
       value='<?php
       if(isset($endDate))
       {
@@ -62,7 +62,7 @@
       {
         echo date("Y-m-d");
       }?>'>
-      <x-secondary-button type="submit" class="flex justify-center items-center active:scale-95" style="min-height:calc(var(--vh) * 5);min-width:10%" id="getdatesbutton">
+      <x-secondary-button type="submit" class="flex justify-center items-center active:scale-95 my-2 sm:my-0" style="min-height:calc(var(--vh) * 5);min-width:10%" id="getdatesbutton">
         <img src="{{ asset('storage/Assets/search.svg') }}">
       </x-secondary-button>
     </div>

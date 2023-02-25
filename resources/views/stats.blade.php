@@ -29,7 +29,7 @@
 
   <div class="flex flex-col justify-center items-center max-w-xl mx-auto" id='TIME_PANEL'>
     <div class="w-full flex flex-col sm:flex-row justify-evenly items-center" style="min-height:calc(var(--vh) * 7.5)">
-      <input name="startDate" class="text-center rounded" type="date" id="startDate" style="min-height:calc(var(--vh) * 5);"
+      <input name="startDate" class="text-center rounded my-2 sm:my-0" type="date" id="startDate" style="min-height:calc(var(--vh) * 5);"
       value='<?php
       if(isset($startDate))
       {
@@ -39,10 +39,10 @@
       {
         echo date("Y-m-d");
       }?>'>
-      <div class="flex justify-center items-center">
+      <div class="flex justify-center items-center my-2 sm:my-0">
         <img src="{{ asset('storage/Assets/chevronRight.svg') }}">
       </div>
-      <input name="endDate" class="text-center rounded" type="date" id="endDate" style="min-height:calc(var(--vh) * 5);"
+      <input name="endDate" class="text-center rounded my-2 sm:my-0" type="date" id="endDate" style="min-height:calc(var(--vh) * 5);"
       value='<?php
       if(isset($endDate))
       {
