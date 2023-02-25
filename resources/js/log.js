@@ -271,6 +271,8 @@ function ReAssign()
 
   clock.onclick = function() { TogglePanel(TIME_PANEL); };
 
+  TogglePanel(TIME_PANEL);
+
   let getdatesbutton = document.getElementById("getdatesbutton");
   getdatesbutton.onclick = function() { PostByDate('log/GetDates'); };
 
