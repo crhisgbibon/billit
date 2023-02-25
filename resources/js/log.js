@@ -11,8 +11,6 @@ let TIME_PANEL = document.getElementById('TIME_PANEL');
 let timeOut = undefined;
 let interval = undefined;
 
-TogglePanel(TIME_PANEL);
-
 function TogglePanel(panel)
 {
   if(panel.style.display === '') panel.style.display = 'none';
