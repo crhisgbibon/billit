@@ -9,7 +9,7 @@
       @if (isset($appTitle))
         {{ $appTitle }}
       @else
-        {{ config('app.name', 'crhisgbibon') }}
+        {{ config('app.name', '') }}
       @endif
     </title>
 

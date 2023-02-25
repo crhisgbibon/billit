@@ -1,5 +1,11 @@
 "use strict";
 
+let clock = document.getElementById("clock");
+let TIME_PANEL = document.getElementById('TIME_PANEL');
+
+let timeOut = undefined;
+let interval = undefined;
+
 let getdatesbutton = document.getElementById("getdatesbutton");
 getdatesbutton.onclick = function() { PostByDate('stats/GetDates'); };
 
@@ -8,6 +14,39 @@ let startDate = document.getElementById("startDate");
 let endDate = document.getElementById("endDate");
 let sessionChart = document.getElementById("sessionChart");
 let chart = undefined;
+
+clock.onclick = function() { TogglePanel(TIME_PANEL); };
+
+TogglePanel(TIME_PANEL);
+
+function TogglePanel(panel)
+{
+  if(panel.style.display === '') panel.style.display = 'none';
+  else panel.style.display = '';
+}
+
+function StartClock()
+{
+  clock.value = TimestampToDatetimeInputString(Date.now());
+  interval = setInterval(GetNow, 1000);
+}
+
+function GetNow()
+{
+  let now = Date.now();
+  clock.value = TimestampToDatetimeInputString(now);
+}
+
+function TimestampToDatetimeInputString(timestamp)
+{
+  const date = new Date((timestamp + GetTimeZoneOffsetInMs()));
+  return date.toISOString().slice(11, 19);
+}
+
+function GetTimeZoneOffsetInMs()
+{
+  return new Date().getTimezoneOffset() * -60 * 1000;
+}
 
 function PostByDate(command)
 {
@@ -28,11 +67,12 @@ function PostByDate(command)
     },
     success:function(result)
     {
+      console.log(result);
       Print(result);
     },
-    error:function()
+    error:function(result)
     {
-
+      console.log(result);
     }
   });
 }
@@ -46,6 +86,19 @@ function Print(result)
   sessionChart = document.getElementById("sessionChart");
   let getdatesbutton = document.getElementById("getdatesbutton");
   getdatesbutton.onclick = function() { PostByDate('stats/GetDates'); };
+
+  clock = document.getElementById("clock");
+  TIME_PANEL = document.getElementById('TIME_PANEL');
+
+  clearInterval(interval);
+
+  timeOut = undefined;
+  interval = undefined;
+
+  clock.onclick = function() { TogglePanel(TIME_PANEL); };
+
+  TogglePanel(TIME_PANEL);
+  StartClock();
 }
 
 function GetSessionChart()
@@ -74,3 +127,5 @@ function GetSessionChart()
     }
   });
 }
+
+document.addEventListener("DOMContentLoaded", StartClock);

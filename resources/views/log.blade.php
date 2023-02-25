@@ -14,11 +14,11 @@
   </style>
 
   <x-slot name="appTitle">
-    {{ __('billit : log') }}
+    {{ __('log') }}
   </x-slot>
 
   <x-slot name="appName">
-    {{ __('billit : log') }}
+    {{ __('log') }}
   </x-slot>
 
   <div class="flex flex-col justify-center items-center max-w-xl mx-auto">

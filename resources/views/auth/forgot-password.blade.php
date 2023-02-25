@@ -1,14 +1,14 @@
 <x-guest-layout>
   <x-slot name="appTitle">
-    {{ __('Reset') }}
+    {{ __('reset') }}
   </x-slot>
 
   <x-slot name="appName">
-    {{ __('Reset') }}
+    {{ __('reset') }}
   </x-slot>
     <x-auth-card>
       <div class="mb-4 text-sm text-gray-600">
-        {{ __('Enter your email address and you will be emailed a password reset link that will allow you to choose a new one.') }}
+        {{ __('enter your email address and you will be emailed a password reset link that will allow you to choose a new one') }}
       </div>
 
       <!-- Session Status -->
@@ -19,7 +19,7 @@
 
         <!-- Email Address -->
         <div>
-          <x-input-label for="email" :value="__('Email:')" />
+          <x-input-label for="email" :value="__('email:')" />
 
           <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
 
@@ -29,17 +29,17 @@
         <div class="flex items-center justify-evenly mt-4">
   
           <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-            {{ __('Log In') }}
+            {{ __('log in') }}
           </a>
 
           @if (Route::has('register'))
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
-              {{ __('Register') }}
+              {{ __('register') }}
             </a>
           @endif
   
           <x-primary-button>
-            {{ __('Email Password Reset Link') }}
+            {{ __('send reset link') }}
           </x-primary-button>
         </div>
 

@@ -6,7 +6,7 @@
         @if (isset($appName))
           {{ $appName }}
         @else
-          {{ config('app.name', 'billit') }}
+          {{ config('app.name', '') }}
         @endif
       </div>
       <!-- Settings Dropdown -->
@@ -32,10 +32,10 @@
                 <div class="font-medium text-base text-gray-800 truncate">{{ Auth::user()->name }}</div>
                 <div class="font-medium text-sm text-gray-500 truncate">{{ Auth::user()->email }}</div>
               </div>
-              <x-responsive-nav-link :href="route('billitLog')">
+              <x-responsive-nav-link :href="route('Log')">
                 {{ __('log') }}
               </x-response-nav-link>
-              <x-responsive-nav-link :href="route('billitStats')">
+              <x-responsive-nav-link :href="route('Stats')">
                 {{ __('stats') }}
               </x-response-nav-link>
               <x-responsive-nav-link :href="route('profile.edit')">
@@ -92,10 +92,10 @@
             <div class="font-medium text-base text-gray-800 truncate">{{ Auth::user()->name }}</div>
             <div class="font-medium text-sm text-gray-500 truncate">{{ Auth::user()->email }}</div>
           </div>
-          <x-responsive-nav-link :href="route('billitLog')">
+          <x-responsive-nav-link :href="route('Log')">
             {{ __('log') }}
           </x-response-nav-link>
-          <x-responsive-nav-link :href="route('billitStats')">
+          <x-responsive-nav-link :href="route('Stats')">
             {{ __('stats') }}
           </x-response-nav-link>
           <x-responsive-nav-link :href="route('profile.edit')">

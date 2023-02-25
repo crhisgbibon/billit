@@ -8,10 +8,10 @@ use App\Http\Controllers\ControllerStats;
 
 Route::get('/', function(){
   return redirect('/log');
-})->middleware(['auth', 'verified'])->name('billit');
+})->middleware(['auth', 'verified'])->name('Home');
 
 Route::controller(ControllerLog::class)->group(function () {
-  Route::get('/log', 'index')->middleware(['auth', 'verified'])->name('billitLog');
+  Route::get('/log', 'index')->middleware(['auth', 'verified'])->name('Log');
   Route::post('/log/GetDates', 'GetDates')->middleware(['auth', 'verified'])->name('GetDates');
   Route::post('/log/ToggleSession', 'ToggleSession')->middleware(['auth', 'verified'])->name('ToggleSession');
   Route::post('/log/NewItem', 'NewItem')->middleware(['auth', 'verified'])->name('NewItem');
@@ -23,15 +23,15 @@ Route::controller(ControllerLog::class)->group(function () {
 });
 
 Route::controller(ControllerStats::class)->group(function () {
-  Route::get('/stats', 'index')->middleware(['auth', 'verified'])->name('billitStats');
-  Route::post('/stats/GetDates/Summary', 'GetSummary')->middleware(['auth', 'verified'])->name('GetDatesSummary');
-  Route::post('/stats/GetDates/Weekday', 'GetWeekday')->middleware(['auth', 'verified'])->name('GetDatesWeekday');
+  Route::get('/stats', 'index')->middleware(['auth', 'verified'])->name('Stats');
+  Route::post('/stats/GetDates/colleague', 'GetColleague')->middleware(['auth', 'verified'])->name('GetDatesColleague');
+  Route::post('/stats/GetDates/reference', 'GetReference')->middleware(['auth', 'verified'])->name('GetDatesReference');
+  Route::post('/stats/GetDates/summary', 'GetSummary')->middleware(['auth', 'verified'])->name('GetDatesSummary');
+  Route::post('/stats/GetDates/session', 'GetSession')->middleware(['auth', 'verified'])->name('GetDatesSession');
+  Route::post('/stats/GetDates/task', 'GetTask')->middleware(['auth', 'verified'])->name('GetDatesTask');
+  Route::post('/stats/GetDates/weekday', 'GetWeekday')->middleware(['auth', 'verified'])->name('GetDatesWeekday');
   Route::post('/stats/GetDates/Weekday/Chart', 'ChartWeekday')->middleware(['auth', 'verified'])->name('GetChartWeekday');
 });
-
-Route::get('/dashboard', function () {
-  return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
   Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

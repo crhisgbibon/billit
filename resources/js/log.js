@@ -5,53 +5,8 @@ let startDate = document.getElementById("startDate");
 let endDate = document.getElementById("endDate");
 let currentItem = document.getElementById("currentItem");
 let currentSession = document.getElementById("currentSession");
-
 let TIME_PANEL = document.getElementById('TIME_PANEL');
-
-let timeOut = undefined;
 let interval = undefined;
-
-function TogglePanel(panel)
-{
-  if(panel.style.display === '') panel.style.display = 'none';
-  else panel.style.display = '';
-}
-
-function ToggleItemById(ref)
-{
-  let item = document.getElementById(ref);
-  if(item.dataset.restart === "YES" || item.dataset.end === "YES") return;
-  if(item.style.display == "none")
-  {
-    item.style.display = "";
-    if(item.dataset.item === "YES")
-    {
-      item.scrollIntoView();
-    }
-  }
-  else
-  {
-    item.style.display = "none";
-  }
-}
-
-function ToggleSessionById(ref)
-{
-  let item = document.getElementById(ref);
-  if(item.dataset.restart === "YES" || item.dataset.end === "YES") return;
-  if(item.style.display == "none")
-  {
-    item.style.display = "";
-    if(item.dataset.session === "YES")
-    {
-      item.scrollIntoView();
-    }
-  }
-  else
-  {
-    item.style.display = "none";
-  }
-}
 
 function StartClock()
 {
@@ -96,6 +51,48 @@ function TimestampToDatetimeInputString(timestamp)
 function GetTimeZoneOffsetInMs()
 {
   return new Date().getTimezoneOffset() * -60 * 1000;
+}
+
+function TogglePanel(panel)
+{
+  if(panel.style.display === '') panel.style.display = 'none';
+  else panel.style.display = '';
+}
+
+function ToggleItemById(ref)
+{
+  let item = document.getElementById(ref);
+  if(item.dataset.restart === "YES" || item.dataset.end === "YES") return;
+  if(item.style.display == "none")
+  {
+    item.style.display = "";
+    if(item.dataset.item === "YES")
+    {
+      item.scrollIntoView();
+    }
+  }
+  else
+  {
+    item.style.display = "none";
+  }
+}
+
+function ToggleSessionById(ref)
+{
+  let item = document.getElementById(ref);
+  if(item.dataset.restart === "YES" || item.dataset.end === "YES") return;
+  if(item.style.display == "none")
+  {
+    item.style.display = "";
+    if(item.dataset.session === "YES")
+    {
+      item.scrollIntoView();
+    }
+  }
+  else
+  {
+    item.style.display = "none";
+  }
 }
 
 function PostByDate(command)

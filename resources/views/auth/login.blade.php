@@ -1,10 +1,10 @@
 <x-guest-layout>
   <x-slot name="appTitle">
-    {{ __('Log In') }}
+    {{ __('log in') }}
   </x-slot>
 
   <x-slot name="appName">
-    {{ __('Log In') }}
+    {{ __('log in') }}
   </x-slot>
   <x-auth-card>
     <!-- Session Status -->
@@ -15,7 +15,7 @@
 
       <!-- Email Address -->
       <div>
-        <x-input-label for="email" :value="__('Email')" />
+        <x-input-label for="email" :value="__('email')" />
 
         <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
 
@@ -24,7 +24,7 @@
 
       <!-- Password -->
       <div class="mt-4">
-        <x-input-label for="password" :value="__('Password')" />
+        <x-input-label for="password" :value="__('password')" />
 
         <x-text-input id="password" class="block mt-1 w-full"
                         type="password"
@@ -38,7 +38,7 @@
       <div class="block mt-4">
         <label for="remember_me" class="inline-flex items-center">
           <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-          <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+          <span class="ml-2 text-sm text-gray-600">{{ __('remember me') }}</span>
         </label>
       </div>
 
@@ -46,18 +46,18 @@
 
         @if (Route::has('register'))
           <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
-            {{ __('Register') }}
+            {{ __('register') }}
           </a>
         @endif
 
         @if (Route::has('password.request'))
           <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-            {{ __('Reset password') }}
+            {{ __('reset password') }}
           </a>
         @endif
 
         <x-primary-button class="ml-3">
-          {{ __('Log in') }}
+          {{ __('log in') }}
         </x-primary-button>
       </div>
     </form>
