@@ -19,7 +19,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/vh.js'])
   </head>
-    <body>
+    <body class='font-work'>
       @include('layouts.navigation')
 
     <!-- Page Heading -->

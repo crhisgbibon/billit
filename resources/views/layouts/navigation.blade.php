@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white">
+<nav x-data="{ open: false }" class="bg-white font-work">
   <!-- Primary Navigation Menu -->
   <div class="mx-auto w-full">
     <div class="flex flex-row items-center w-full bg-white border-b border-gray-100 justify-between sm:justify-center " style="min-height:calc(var(--vh) * 7.5)">

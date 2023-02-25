@@ -16,10 +16,15 @@
     <!-- Add ins -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
 
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/vh.js'])
   </head>
-    <body class="antialiased">
+    <body class="antialiased font-sans">
       <div class="min-h-screen">
         
         @include('layouts.navigation')
