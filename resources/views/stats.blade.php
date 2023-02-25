@@ -3,22 +3,22 @@
 <x-app-layout>
 
   <x-slot name="appTitle">
-    {{ __('stats') }}
+    {{ __('Stats') }}
   </x-slot>
 
   <x-slot name="appName">
-    {{ __('stats') }}
+    {{ __('Stats') }}
   </x-slot>
 
   <div class="flex flex-col justify-center items-center max-w-xl mx-auto">
     <div class="w-full flex flex-row justify-center items-center" style="min-height:calc(var(--vh) * 7.5)">
       <select id="reportType" class="h-full text-center rounded" style="min-height:calc(var(--vh) * 5);max-width:40%">
-        <option <?php echo ($reportType === "summary") ? "selected" : ""; ?>>summary</option>
-        <option <?php echo ($reportType === "colleague") ? "selected" : ""; ?>>colleague</option>
-        <option <?php echo ($reportType === "reference") ? "selected" : ""; ?>>reference</option>
-        <option <?php echo ($reportType === "session") ? "selected" : ""; ?>>session</option>
-        <option <?php echo ($reportType === "task") ? "selected" : ""; ?>>task</option>
-        <option <?php echo ($reportType === "weekday") ? "selected" : ""; ?>>weekday</option>
+        <option <?php echo ($reportType === "Summary") ? "selected" : ""; ?>>Summary</option>
+        <option <?php echo ($reportType === "Colleague") ? "selected" : ""; ?>>Colleague</option>
+        <option <?php echo ($reportType === "Reference") ? "selected" : ""; ?>>Reference</option>
+        <option <?php echo ($reportType === "Session") ? "selected" : ""; ?>>Session</option>
+        <option <?php echo ($reportType === "Task") ? "selected" : ""; ?>>Task</option>
+        <option <?php echo ($reportType === "Weekday") ? "selected" : ""; ?>>Weekday</option>
       </select>
       <input class='w-full text-center bg-white outline-none	cursor-pointer' type="clock" id="clock" readonly style="width:40%">
       <x-secondary-button type="submit" class="flex justify-center items-center active:scale-95" style="min-height:calc(var(--vh) * 5);min-width:10%" id="getdatesbutton">
@@ -55,7 +55,7 @@
     </div>
   </div>
   
-  <div id="logOutput" class="w-full max-w-6xl h-full mx-auto">
+  <div id="logOutput" class="w-full max-w-6xl h-full mx-auto overflow-y-auto" style='max-height:calc(var(--vh) * 85);'>
 
     <x-stats-output :summary="$summary" :weekday="$weekday" :session="$session" :task="$task" :colleague="$colleague" :reference="$reference"/>
 

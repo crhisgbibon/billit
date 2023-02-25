@@ -14,11 +14,11 @@
   </style>
 
   <x-slot name="appTitle">
-    {{ __('log') }}
+    {{ __('Log') }}
   </x-slot>
 
   <x-slot name="appName">
-    {{ __('log') }}
+    {{ __('Log') }}
   </x-slot>
 
   <div class="flex flex-col justify-center items-center max-w-xl mx-auto">
@@ -39,7 +39,7 @@
 
   <div class="flex flex-col justify-center items-center max-w-xl mx-auto" id='TIME_PANEL'>
     <div class="w-full flex flex-col sm:flex-row justify-evenly items-center" style="min-height:calc(var(--vh) * 7.5)">
-      <input name="startDate" class="text-center rounded my-2 sm:my-0" type="date" id="startDate" style="min-height:calc(var(--vh) * 5);max-width:35%"
+      <input name="startDate" class="text-center rounded my-2 sm:my-0" type="date" id="startDate" style="min-height:calc(var(--vh) * 5)"
       value='<?php
       if(isset($startDate))
       {
@@ -52,7 +52,7 @@
       <div class="flex justify-center items-center">
         <img src="{{ asset('storage/Assets/chevronRight.svg') }}">
       </div>
-      <input name="endDate" class="text-center rounded my-2 sm:my-0" type="date" id="endDate" style="min-height:calc(var(--vh) * 5);max-width:35%"
+      <input name="endDate" class="text-center rounded my-2 sm:my-0" type="date" id="endDate" style="min-height:calc(var(--vh) * 5)"
       value='<?php
       if(isset($endDate))
       {
@@ -68,7 +68,7 @@
     </div>
   </div>
   
-  <div id="logOutput" class="w-full max-w-6xl h-full mx-auto">
+  <div id="logOutput" class="w-full max-w-6xl h-full mx-auto overflow-y-auto" style='max-height:calc(var(--vh) * 85);'>
 
     <x-log-output :logs="$logs" :session="$isSession"/>
 

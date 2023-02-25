@@ -19,15 +19,8 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/vh.js'])
   </head>
-    <body class='font-work'>
-      @include('layouts.navigation')
-
-    <!-- Page Heading -->
-    @if (isset($header))
-      <header class="box-border border-b border-gray-100" id="topControl">
-        {{ $header }}
-      </header>
-    @endif
+  <body class='font-work min-h-screen max-h-screen'>
+    @include('layouts.navigation')
     
     <div class="antialiased">
       {{ $slot }}

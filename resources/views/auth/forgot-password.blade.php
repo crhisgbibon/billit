@@ -1,14 +1,14 @@
 <x-guest-layout>
   <x-slot name="appTitle">
-    {{ __('reset') }}
+    {{ __('Reset') }}
   </x-slot>
 
   <x-slot name="appName">
-    {{ __('reset') }}
+    {{ __('Reset') }}
   </x-slot>
     <x-auth-card>
       <div class="mb-4 text-sm text-gray-600">
-        {{ __('enter your email address and you will be emailed a password reset link that will allow you to choose a new one') }}
+        {{ __('Enter your email address and you will be emailed a password reset link that will allow you to choose a new one.') }}
       </div>
 
       <!-- Session Status -->
@@ -19,7 +19,7 @@
 
         <!-- Email Address -->
         <div>
-          <x-input-label for="email" :value="__('email:')" />
+          <x-input-label for="email" :value="__('Email:')" />
 
           <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
 
@@ -28,18 +28,18 @@
 
         <div class="flex items-center justify-evenly mt-4">
   
-          <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-            {{ __('log in') }}
+          <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black" href="{{ route('login') }}">
+            {{ __('Log In') }}
           </a>
 
           @if (Route::has('register'))
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
-              {{ __('register') }}
+            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black" href="{{ route('register') }}">
+              {{ __('Register') }}
             </a>
           @endif
   
           <x-primary-button>
-            {{ __('send reset link') }}
+            {{ __('Send reset link') }}
           </x-primary-button>
         </div>
 

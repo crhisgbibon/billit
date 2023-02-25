@@ -1,8 +1,8 @@
-<nav x-data="{ open: false }" class="bg-white font-work">
+<nav x-data="{ open: false }" class="bg-white font-work" style="height:calc(var(--vh) * 7.5)">
   <!-- Primary Navigation Menu -->
-  <div class="mx-auto w-full">
-    <div class="flex flex-row items-center w-full bg-white border-b border-gray-100 justify-between sm:justify-center " style="min-height:calc(var(--vh) * 7.5)">
-      <div class="ml-2 sm:m-0 flex justify-center items-center h-full w-1/3">
+  <div class="mx-auto w-full h-full flex justify-center items-center">
+    <div class="flex flex-row items-center w-full bg-white border-b border-gray-100 justify-between sm:justify-center h-full max-w-lg">
+      <div class="flex justify-start items-center h-full ml-4 w-1/2">
         @if (isset($appName))
           {{ $appName }}
         @else
@@ -10,16 +10,16 @@
         @endif
       </div>
       <!-- Settings Dropdown -->
-      <div class="hidden sm:flex sm:items-center sm:h-full justify-center items-center mr-2 w-1/3">
+      <div class="hidden sm:flex sm:items-center h-full justify-end items-center mr-2 w-1/2">
         <x-dropdown align="right" width="48">
           <x-slot name="trigger">
             <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md bg-white text-gray-500 hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
               @auth
                 <div class="truncate">{{ Auth::user()->name }}</div>
               @else
-                <div>{{ __('account') }}</div>
+                <div>{{ __('Account') }}</div>
               @endauth
-              <div class="ml-1">
+              <div class="">
                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>
@@ -33,13 +33,13 @@
                 <div class="font-medium text-sm text-gray-500 truncate">{{ Auth::user()->email }}</div>
               </div>
               <x-responsive-nav-link :href="route('Log')">
-                {{ __('log') }}
+                {{ __('Log') }}
               </x-response-nav-link>
               <x-responsive-nav-link :href="route('Stats')">
-                {{ __('stats') }}
+                {{ __('Stats') }}
               </x-response-nav-link>
               <x-responsive-nav-link :href="route('profile.edit')">
-                {{ __('profile') }}
+                {{ __('Profile') }}
               </x-response-nav-link>
               <!-- Authentication -->
               <form method="POST" action="{{ route('logout') }}">
@@ -47,23 +47,23 @@
                 <x-responsive-nav-link :href="route('logout')"
                                       onclick="event.preventDefault();
                                       this.closest('form').submit();">
-                  {{ __('log out') }}
+                  {{ __('Log Out') }}
                 </x-responsive-nav-link>
               </form>
             </x-slot>
           @else
             <x-slot name="content">
               <x-dropdown-link :href="route('login')">
-                  {{ __('log in') }}
+                  {{ __('Log In') }}
               </x-dropdown-link>
               @if (Route::has('register'))
                 <x-dropdown-link :href="route('register')">
-                  {{ __('register') }}
+                  {{ __('Register') }}
                 </x-dropdown-link>
               @endif
               @if (Route::has('password.request'))
                 <x-dropdown-link :href="route('password.request')">
-                  {{ __('reset password') }}
+                  {{ __('Reset Password') }}
                 </x-dropdown-link>
               @endif
             </x-slot>
@@ -93,13 +93,13 @@
             <div class="font-medium text-sm text-gray-500 truncate">{{ Auth::user()->email }}</div>
           </div>
           <x-responsive-nav-link :href="route('Log')">
-            {{ __('log') }}
+            {{ __('Log') }}
           </x-response-nav-link>
           <x-responsive-nav-link :href="route('Stats')">
-            {{ __('stats') }}
+            {{ __('Stats') }}
           </x-response-nav-link>
           <x-responsive-nav-link :href="route('profile.edit')">
-            {{ __('profile') }}
+            {{ __('Profile') }}
           </x-response-nav-link>
           <!-- Authentication -->
           <form method="POST" action="{{ route('logout') }}">
@@ -107,22 +107,22 @@
             <x-responsive-nav-link :href="route('logout')"
                                   onclick="event.preventDefault();
                                   this.closest('form').submit();">
-              {{ __('log out') }}
+              {{ __('Log Out') }}
             </x-responsive-nav-link>
           </form>
         </div>
       @else
         <x-responsive-nav-link :href="route('login')">
-          {{ __('log in') }}
+          {{ __('Log In') }}
         </x-responsive-nav-link>
         @if (Route::has('register'))
           <x-responsive-nav-link :href="route('register')">
-            {{ __('register') }}
+            {{ __('Register') }}
           </x-responsive-nav-link>
         @endif
         @if (Route::has('password.request'))
           <x-responsive-nav-link :href="route('password.request')">
-            {{ __('reset password') }}
+            {{ __('Reset Password') }}
           </x-responsive-nav-link>
         @endif
       @endauth

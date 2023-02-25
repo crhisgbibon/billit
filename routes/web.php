@@ -24,12 +24,12 @@ Route::controller(ControllerLog::class)->group(function () {
 
 Route::controller(ControllerStats::class)->group(function () {
   Route::get('/stats', 'index')->middleware(['auth', 'verified'])->name('Stats');
-  Route::post('/stats/GetDates/colleague', 'GetColleague')->middleware(['auth', 'verified'])->name('GetDatesColleague');
-  Route::post('/stats/GetDates/reference', 'GetReference')->middleware(['auth', 'verified'])->name('GetDatesReference');
-  Route::post('/stats/GetDates/summary', 'GetSummary')->middleware(['auth', 'verified'])->name('GetDatesSummary');
-  Route::post('/stats/GetDates/session', 'GetSession')->middleware(['auth', 'verified'])->name('GetDatesSession');
-  Route::post('/stats/GetDates/task', 'GetTask')->middleware(['auth', 'verified'])->name('GetDatesTask');
-  Route::post('/stats/GetDates/weekday', 'GetWeekday')->middleware(['auth', 'verified'])->name('GetDatesWeekday');
+  Route::post('/stats/GetDates/Colleague', 'GetColleague')->middleware(['auth', 'verified'])->name('GetDatesColleague');
+  Route::post('/stats/GetDates/Reference', 'GetReference')->middleware(['auth', 'verified'])->name('GetDatesReference');
+  Route::post('/stats/GetDates/Summary', 'GetSummary')->middleware(['auth', 'verified'])->name('GetDatesSummary');
+  Route::post('/stats/GetDates/Session', 'GetSession')->middleware(['auth', 'verified'])->name('GetDatesSession');
+  Route::post('/stats/GetDates/Task', 'GetTask')->middleware(['auth', 'verified'])->name('GetDatesTask');
+  Route::post('/stats/GetDates/Weekday', 'GetWeekday')->middleware(['auth', 'verified'])->name('GetDatesWeekday');
   Route::post('/stats/GetDates/Weekday/Chart', 'ChartWeekday')->middleware(['auth', 'verified'])->name('GetChartWeekday');
 });
 

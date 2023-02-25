@@ -1,10 +1,10 @@
 <x-guest-layout>
   <x-slot name="appTitle">
-    {{ __('register') }}
+    {{ __('Register') }}
   </x-slot>
 
   <x-slot name="appName">
-    {{ __('register') }}
+    {{ __('Register') }}
   </x-slot>
   <x-auth-card>
     <form method="POST" action="{{ route('register') }}">
@@ -12,7 +12,7 @@
 
       <!-- Name -->
       <div>
-        <x-input-label for="name" :value="__('name')" />
+        <x-input-label for="name" :value="__('Name')" />
 
         <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
 
@@ -21,7 +21,7 @@
 
       <!-- Email Address -->
       <div class="mt-4">
-        <x-input-label for="email" :value="__('email')" />
+        <x-input-label for="email" :value="__('Email')" />
 
         <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
 
@@ -30,7 +30,7 @@
 
       <!-- Password -->
       <div class="mt-4">
-        <x-input-label for="password" :value="__('password')" />
+        <x-input-label for="password" :value="__('Password')" />
 
         <x-text-input id="password" class="block mt-1 w-full"
                         type="password"
@@ -42,7 +42,7 @@
 
       <!-- Confirm Password -->
       <div class="mt-4">
-        <x-input-label for="password_confirmation" :value="__('confirm password')" />
+        <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
 
         <x-text-input id="password_confirmation" class="block mt-1 w-full"
                         type="password"
@@ -52,18 +52,18 @@
       </div>
 
       <div class="flex items-center justify-evenly mt-4">
-        <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-          {{ __('log in') }}
+        <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black" href="{{ route('login') }}">
+          {{ __('Log In') }}
         </a>
 
         @if (Route::has('password.request'))
-          <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-            {{ __('reset password') }}
+          <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black" href="{{ route('password.request') }}">
+            {{ __('Reset Password') }}
           </a>
         @endif
 
         <x-primary-button class="ml-4">
-          {{ __('register') }}
+          {{ __('Register') }}
         </x-primary-button>
       </div>
     </form>

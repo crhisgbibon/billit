@@ -183,7 +183,7 @@
 @isset($session)
   @isset($session['sumSessions'])
     <div class="flex flex-col w-full px-2 max-w-3xl mx-auto justify-center items-center">
-      <div class='header rounded-lg flex flex-row w-full max-w-3xl justify-center items-center py-2 my-2' style='max-width: 95%;'>
+      <div class='header rounded-lg flex flex-row w-full max-w-3xl justify-center items-center py-2 my-2'>
         <div class='flex justify-center items-center' style="min-width:25%;max-width:25%">
           Days
         </div>
@@ -198,7 +198,7 @@
         </div>
       </div>
       @foreach($session['sumSessions'] as $key => $value)
-        <div class='stat rounded-lg flex flex-row w-full justify-center items-center py-2 my-2' style='max-width: 95%;'>
+        <div class='stat rounded-lg flex flex-row w-full justify-center items-center py-2 my-2'>
           <div class='flex justify-center items-center' style="min-width:25%;max-width:25%">
             {{$key}}
           </div>
@@ -219,94 +219,94 @@
 
 @isset($weekday)
 
-  <div class="flex flex-col w-full max-w-3xl mx-auto justify-center items-center">
+  <div class="flex flex-col w-full px-2 mx-auto justify-center items-center">
 
     @isset($weekday['days'])
 
-      <div class='header rounded-lg flex flex-row w-full justify-evenly items-center py-2 my-2'>
-        <div class='flex justify-evenly items-center' style="min-width:10%;max-width:10%">
+      <div class='header rounded-lg flex flex-row w-full justify-center items-center py-2 my-2'>
+        <div class='flex justify-evenly items-center' style="width:100%;">
           Day
         </div>
-        <div class='flex justify-center items-center' style="min-width:10%;max-width:10%">
+        <div class='flex justify-center items-center' style="width:100%;">
           Count
         </div>
-        <div class='flex justify-center items-center' style="min-width:10%;max-width:10%">
+        <div class='flex justify-center items-center' style="width:100%;">
           Start
         </div>
-        <div class='flex justify-center items-center' style="min-width:10%;max-width:10%">
+        <div class='flex justify-center items-center' style="width:100%;">
           End
         </div>
-        <div class='hidden sm:flex justify-center items-center' style="min-width:10%;max-width:10%">
+        <div class='hidden sm:flex justify-center items-center' style="width:100%;">
           Log
         </div>
-        <div class='hidden sm:flex justify-center items-center' style="min-width:10%;max-width:10%">
+        <div class='hidden sm:flex justify-center items-center' style="width:100%;">
           Session
         </div>
-        <div class='hidden sm:flex justify-center items-center' style="min-width:10%;max-width:10%">
+        <div class='hidden sm:flex justify-center items-center' style="width:100%;">
           Break
         </div>
-        <div class='hidden sm:flex justify-center items-center' style="min-width:10%;max-width:10%">
+        <div class='hidden sm:flex justify-center items-center' style="width:100%;">
           File
         </div>
-        <div class='hidden sm:flex justify-center items-center' style="min-width:10%;max-width:10%">
+        <div class='hidden sm:flex justify-center items-center' style="width:100%;">
           Help
         </div>
-        <div class='hidden sm:flex justify-center items-center' style="min-width:10%;max-width:10%">
+        <div class='hidden sm:flex justify-center items-center' style="width:100%;">
           Misc
         </div>
       </div>
 
       @foreach($weekday['days'] as $key => $day)
 
-      <div class='stat rounded-lg flex flex-row w-full justify-evenly items-center py-2 my-2'>
-        <div class='flex justify-evenly items-center' style="min-width:10%;max-width:10%">
+      <div class='stat rounded-lg flex flex-row w-full justify-center items-center py-2 my-2'>
+        <div class='flex justify-evenly items-center' style="width:100%">
           {{$key}}
         </div>
-        <div class='flex justify-center items-center' style="min-width:10%;max-width:10%">
+        <div class='flex justify-center items-center' style="width:100%">
           {{$weekday["days"][$key]["count"]}}
         </div>
-        <div class='flex justify-center items-center' style="min-width:10%;max-width:10%">
+        <div class='flex justify-center items-center' style="width:100%">
           {{$weekday["days"][$key]["averageStart"]}}
         </div>
-        <div class='flex justify-center items-center' style="min-width:10%;max-width:10%">
+        <div class='flex justify-center items-center' style="width:100%">
           {{$weekday["days"][$key]["averageEnd"]}}
         </div>
-        <div class='hidden sm:flex justify-center items-center' style="min-width:10%;max-width:10%">
+        <div class='hidden sm:flex justify-center items-center' style="width:100%">
           {{$weekday["days"][$key]["averageLength"]}}
         </div>
-        <div class='hidden sm:flex justify-center items-center' style="min-width:10%;max-width:10%">
+        <div class='hidden sm:flex justify-center items-center' style="width:100%">
           {{$weekday["days"][$key]["averageSession"]}}
         </div>
-        <div class='hidden sm:flex justify-center items-center' style="min-width:10%;max-width:10%">
+        <div class='hidden sm:flex justify-center items-center' style="width:100%">
           {{$weekday["days"][$key]["averageBreak"]}}
         </div>
 
         @if(isset($weekday["days"][$key]["averageFile"]))
-          <div class='hidden sm:flex justify-center items-center' style="min-width:10%;max-width:10%">
+          <div class='hidden sm:flex justify-center items-center' style="width:100%">
             {{$weekday["days"][$key]["averageFile"]}}
           </div>
         @else
-          <div class='hidden sm:flex justify-center items-center' style="min-width:10%;max-width:10%">
+          <div class='hidden sm:flex justify-center items-center' style="width:100%">
             0
           </div>
         @endif
 
         @if(isset($weekday["days"][$key]["averageHelp"]))
-          <div class='hidden sm:flex justify-center items-center' style="min-width:10%;max-width:10%">
+          <div class='hidden sm:flex justify-center items-center' style="width:100%">
             {{$weekday["days"][$key]["averageHelp"]}}
           </div>
         @else
-          <div class='hidden sm:flex justify-center items-center' style="min-width:10%;max-width:10%">
+          <div class='hidden sm:flex justify-center items-center' style="width:100%">
             0
           </div>
         @endif
 
         @if(isset($weekday["days"][$key]["averageMisc"]))
-          <div class='hidden sm:flex justify-center items-center' style="min-width:10%;max-width:10%">
+          <div class='hidden sm:flex justify-center items-center' style="width:100%">
             {{$weekday["days"][$key]["averageMisc"]}}
           </div>
         @else
-          <div class='hidden sm:flex justify-center items-center' style="min-width:10%;max-width:10%">
+          <div class='hidden sm:flex justify-center items-center' style="width:100%">
             0
           </div>
         @endif

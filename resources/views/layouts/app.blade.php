@@ -24,22 +24,12 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/vh.js'])
   </head>
-    <body class="antialiased font-sans">
-      <div class="min-h-screen">
-        
-        @include('layouts.navigation')
+  <body class="antialiased font-sans min-h-screen max-h-screen">
+    @include('layouts.navigation')
 
-        <!-- Page Heading -->
-        @if (isset($header))
-          <header class="box-border border-b border-gray-100 box-border" id="topControl" style="min-height:calc(var(--vh) * 7.5)">
-            {{ $header }}
-          </header>
-        @endif
-
-        <!-- Page Content -->
-        <main class="antialiased">
-          {{ $slot }}
-        </main>
-      </div>
-    </body>
+    <!-- Page Content -->
+    <main class="antialiased">
+      {{ $slot }}
+    </main>
+  </body>
 </html>
