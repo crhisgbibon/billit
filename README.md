@@ -1,11 +1,3 @@
-# billit
+# <a href='https://chronocol.xyz/login'>Billit</a>
 
-## https://chronocol.xyz/login
-
-laravel 10.0 with mysql
-
-breeze enabled
-
-```
-./vendor/bin/sail up & npm run dev
-```
+<p>Time recording tool made with Laravel/Mysql</p>
